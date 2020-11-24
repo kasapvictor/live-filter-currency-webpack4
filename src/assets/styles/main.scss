@@ -1,0 +1,121 @@
+@import "utils/fonts";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/default";
+
+a { color: var(--color-link);
+    &:hover { color: var(--color-link-hover); }
+    &:active { color: var(--color-link-active); }
+}
+
+input { padding: 5px 10px; }
+
+textarea { padding: 10px 20px; font-family: var(--font-family); }
+
+input, textarea {
+  border: 1px solid var(--color-light-hover);
+  border-radius: 4px;
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: var(--color-light);
+  &:hover {background: var(--color-light-hover)}
+}
+
+button.warning {
+  background:var(--color-warning);
+  &:hover { background: var(--color-warning-hover); }
+}
+button.warning, button.success, button.mute { color:#fff }
+
+button.success {
+  background:var(--color-success);
+  &:hover { background: var(--color-success-hover); }
+}
+
+button.mute {
+  background: var(--color-mute);
+  &:hover { background: var(--color-mute-hover); }
+}
+
+table {
+  margin-bottom: 30px;
+  caption {
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  th {
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-mute);
+  }
+  tr:nth-child(odd) {
+    background: var(--color-light);
+  }
+  th, td {
+    padding: 10px 20px;
+    &:nth-child(odd) { border-right: 1px solid var(--color-mute); }
+  }
+}
+
+.container {
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.hide {display: none;}
+
+.show {display: block;}
+
+.link-active {
+  color: var(--color-mute);
+  border-bottom: 1px solid var(--color-mute);
+  &:hover { color: var(--color-mute) }
+  &:active { color: var(--color-mute) }
+}
+
+.link-mute { color: var(--color-mute);
+  &:hover { color: var(--color-mute) }
+  &:active { color: var(--color-mute) }
+}
+
+/*
+    Filter
+*/
+.wrap-filter-list {
+  max-width: 300px;
+  margin-top: 10px;
+  position: relative;
+  .list-currency {
+    width: 100%;
+    min-width: 250px;
+    min-height: 36px;
+    max-height: 200px;
+    position: absolute;
+    border:1px solid var(--color-light-hover);
+    border-radius:4px;
+    overflow: auto;
+    li {
+      padding: 5px 20px 5px 20px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      cursor: pointer;
+      &:hover {
+        background: var(--color-light-hover);
+      }
+      &:hover, &:hover span {
+        font-weight: 600;
+      }
+    }
+  }
+  .filter-list-close {
+    position: absolute;
+    right: -40px;
+    top: 3px;
+  }
+}
+
